@@ -8,7 +8,7 @@ def locate_topoflow(cache_dir):
             return x
 
 
-root_dir = '/home/csdms/wmt/topoflow.1'
+root_dir = '/home/csdms/wmt/topoflow.0'
 cache_dir = os.path.join(root_dir, 'cache')
 topoflow_dir = locate_topoflow(cache_dir)
 example_dir = os.path.join(cache_dir, topoflow_dir,
