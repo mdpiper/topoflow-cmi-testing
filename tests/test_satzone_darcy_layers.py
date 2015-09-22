@@ -8,7 +8,7 @@ from . import example_dir
 
 
 cfg_file = os.path.join(example_dir, 'June_20_67_satzone_darcy_layers.cfg')
-var_name = 'land_surface_water__baseflow_volume_flux'
+var_name = 'soil_top-layer__porosity'
 
 
 def setup_module():
@@ -48,7 +48,7 @@ def test_get_var_type():
 
 def test_get_var_units():
     x = component.get_var_units(var_name)
-    assert_equals(x, 'm s-1')
+    assert_equals(x, '1')
 
 
 def test_get_var_itemsize():
