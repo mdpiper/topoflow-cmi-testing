@@ -13,3 +13,7 @@ cache_dir = os.path.join(root_dir, 'cache')
 topoflow_dir = locate_topoflow(cache_dir)
 example_dir = os.path.join(cache_dir, topoflow_dir,
                            'topoflow', 'examples', 'Treynor_Iowa')
+
+# Used by tests for D8 and Erode components.
+data_dir = os.path.join(os.path.abspath('..'), 'data')
+test_dir = os.path.dirname(__file__)
