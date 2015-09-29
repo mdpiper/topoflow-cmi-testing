@@ -45,7 +45,7 @@ def test_get_start_time():
 
 def test_get_end_time():
     x = component.get_end_time()
-    assert_equals(x, -1.0)
+    assert_equals(x, 1.0)
 
 
 def test_get_var_type():
