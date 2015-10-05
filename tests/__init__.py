@@ -15,5 +15,5 @@ example_dir = os.path.join(cache_dir, topoflow_dir,
                            'topoflow', 'examples', 'Treynor_Iowa')
 
 # Used by tests for D8 and Erode components.
-data_dir = os.path.join(os.path.abspath('..'), 'data')
 test_dir = os.path.dirname(__file__)
+data_dir = os.path.abspath(os.path.join(test_dir, '..', 'data'))
