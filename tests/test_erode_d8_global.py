@@ -48,10 +48,9 @@ def test_get_end_time():
     assert_equals(x, 500000.0)
 
 
-# XXX: Fails with data type 'unknown'.
 def test_get_var_type():
     x = component.get_var_type(var_name)
-    assert_equals(x, 'float32')
+    assert_equals(x, 'float64')
 
 
 def test_get_var_units():
@@ -59,10 +58,9 @@ def test_get_var_units():
     assert_equals(x, 'm')
 
 
-# XXX: Fails with unknown attribute 'z0'.
 def test_get_var_itemsize():
     x = component.get_var_itemsize(var_name)
-    assert_equals(x, 4)
+    assert_equals(x, 8)
 
 
 # The get_var_nbytes method isn't implemented in TopoFlow.
@@ -70,7 +68,6 @@ def test_get_var_itemsize():
 #     x = component.get_var_nbytes(var_name)
 
 
-# XXX: Fails with data type 'unknown'.
 def test_get_value():
     x = component.get_value(var_name)
     assert_is_not_none(x)
