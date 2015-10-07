@@ -10,7 +10,8 @@ from . import data_dir, test_dir
 
 cfg_file = os.path.join(data_dir, 'Erode_D8_Global.cfg')
 out_dir = './out'
-var_name = 'land_surface__initial_elevation'  # z0
+# var_name = 'land_surface__initial_elevation'  # z0
+var_name = 'land_surface__elevation'  # z
 
 
 def setup_module():
