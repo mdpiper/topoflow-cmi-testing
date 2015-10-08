@@ -1,27 +1,34 @@
 #!/usr/bin/env python
 # Nosetests for the TopoFlow EvapReadFile component.
+# I used the EvapEnergyBalance component to generate the file
+# [case_prefix]_2D-ETrate.nc.
 
 import os
+import shutil
 from nose.tools import assert_is_not_none, assert_equals
 from cmt.components import EvapReadFile as Component
-from . import example_dir
+from . import data_dir, test_dir
 
 
-cfg_file = os.path.join(example_dir, 'June_20_67_evap_read_file.cfg')
+cfg_file = os.path.join(data_dir, 'Evap_Read_File.cfg')
+out_dir = './out'
 var_name = 'land_surface_water__evaporation_volume_flux'
 
 
 def setup_module():
     global component
     component = Component()
+    os.chdir(data_dir)
+    if os.path.exists(out_dir) is False:
+        os.mkdir(out_dir)
 
 
 def teardown_module():
-    pass
+    if os.path.exists(out_dir) is True:
+        shutil.rmtree(out_dir)
+    os.chdir(test_dir)
 
 
-# The file June_20_67_2D-ETrate-in.nc is missing; I had to generate it
-# with the EvapEnergyBalance component.
 def test_irf():
     component.initialize(cfg_file)
     component.update(1.0)
