@@ -2,22 +2,29 @@
 # Nosetests for the TopoFlow DiversionsFraction component.
 
 import os
+import shutil
 from nose.tools import assert_is_not_none, assert_equals
 from cmt.components import DiversionsFraction as Component
-from . import example_dir
+from . import data_dir, test_dir
 
 
-cfg_file = os.path.join(example_dir, 'June_20_67_diversions_fraction_method.cfg')
+cfg_file = os.path.join(data_dir, 'Diversions_Fraction_Method.cfg')
+out_dir = './out'
 var_name = 'sources_water__volume_flow_rate'
 
 
 def setup_module():
     global component
     component = Component()
+    os.chdir(data_dir)
+    if os.path.exists(out_dir) is False:
+        os.mkdir(out_dir)
 
 
 def teardown_module():
-    pass
+    if os.path.exists(out_dir) is True:
+        shutil.rmtree(out_dir)
+    os.chdir(test_dir)
 
 
 def test_irf():
