@@ -34,7 +34,7 @@ def test_irf():
     component.update(1.0)  # years
     component.finalize()
 
-    
+
 def test_get_component_name():
     x = component.get_component_name()
     assert_equals(x, 'Erode_D8_Local')

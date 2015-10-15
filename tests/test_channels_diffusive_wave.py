@@ -10,6 +10,7 @@ from . import example_dir
 cfg_file = os.path.join(example_dir, 'June_20_67_channels_diffusive_wave.cfg')
 var_name = 'channel_water__volume'
 
+
 def setup_module():
     global component
     component = Component()

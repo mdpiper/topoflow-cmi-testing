@@ -108,4 +108,3 @@ def test_get_grid_origin():
     x = component.get_grid_origin(grid_id)
     assert_equals(x[0], 4560090.42)
     assert_equals(x[1], 277850.358)
-
